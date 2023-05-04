@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="100%개발자들이 마케팅하는 회사. 3D웹 특허기술로 홈페이지를 제작하고, AI콘텐츠 마케팅으로 자동 매출을 만듭니다. 3D하드웨어+AI소프트웨어를 연구합니다." />
+    <title>메버(MEVER)</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="CONTROL_BOX" class="control-box"></div>
+    <div class="header-box">30억 빚을 300억 가치로 만든 CEO</div>
+    <div id="LOGIN_BOX">LogIn</div>
+    <div id="FOOTER_BOX" class="footer-box">
+      <p>메일주소를 입력하시면 '무료'로 체험하실 수 있습니다</p>
+      <input
+        id="INPUT_EMAIL"
+        type="text"
+        placeholder="E-mail 주소 예)mever@mever.me"
+      />
+      <input
+        id="INPUT_PHONE"
+        type="tel"
+        placeholder="전화 번호 예)010-1234-5678"
+      />
+      <span class="check-box" id="CHECK_BOX">
+        <span class="check-free">
+          <img id="CHECK_SIGN" class="check-sign" src="./public/checkbox.svg" alt="check">
+        </span>
+        <p>개인정보활용 동의</p>
+      </span>
+      <button id="SUBMIT_EMAIL">전송</button>
+      <h4>개인정보 동의는 자동으로 되며, 언제든 해지하실 수 있습니다.</h4>
+      <p id="ALERT_EMAIL"></p>
+    </div>
+    
+    <!-- <div id="progress-bar-container">
+      <label class="progress-label">Loading...</label>
+      <progress id="progress-bar" value="0" max="100"></progress>
+    </div> -->
+    <div class="loading-container">
+      <div>
+        <p class="loading-message blink">loading...</p>
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+    <div class="point point-0 hidden">
+      <label class="point-label" name="redbook">+</label>
+      <p>메버 스토리</p>
+    </div>
+    <div class="point point-1 hidden">
+      <label class="point-label" name="pay">+</label>
+      <p>성공하는CEO를 위한 상품·서비스</p>
+    </div>
+    <div class="point point-2 hidden">
+      <label class="point-label" name="books">+</label>
+      <p>3분뉴스·3분스터디</p>
+    </div>
+    <div class="point point-3 hidden">
+      <label class="point-label" name="chair">+</label>
+      <p>1·10·100억매출도전</p>
+    </div>
+    <div class="zoom-out hidden">
+      <label class="zoom-out-label">Zoom-Out</label>
+    </div>
+    <canvas id="app"></canvas>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    $.ajax(
+      
+    )
+    axios.post("https://api.mever.me:8080/insMember", data).then((res) => {
+      alert(res);
+    });
+  </script>
+</html>
