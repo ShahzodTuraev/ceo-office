@@ -111,8 +111,8 @@ body {
 
 .zoom-out {
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: 10%;
+  right: 20%;
   z-index: 1;
 }
 
@@ -265,52 +265,6 @@ body {
   color: #ffa500;
   font-weight: 500;
 }
-
-@media only screen and (max-width: 767px) {
-  /* CSS styles for smartphones */
-  @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
-
-  body {
-    font-family: "SCoreDream";
-    height: 100vh;
-  }
-
-
-  .loading-message {
-    font-size: 16px;
-  }
-
-  .point p {
-    font-size: 16px;
-    width: 200px;
-  }
-
-  .point-0 p {
-    left: -90px;
-    font-weight: 500;
-  }
-
-  .point-1 p {
-    left: -90px;
-    font-weight: 500;
-  }
-
-  .footer-box {
-    width: 100%;
-    height: auto;
-    padding: 16px;
-  }
-
-  .footer-box h4 {
-    font-size: 16px;
-    margin-top: 4px;
-  }
-
-  .footer-box p {
-    font-size: 24px;
-  }
-}
-
 #INPUT_EMAIL {
   padding: 2px;
   font-size: 16px;
@@ -372,6 +326,39 @@ body {
   cursor: pointer;
 }
 
+#EMAIL_ALERT{
+  z-index: 3;
+  position: absolute;
+  top: 62%;
+  right: 30%;
+  font-size: 13px;
+  color: red;
+  font-weight: 600;
+
+}
+#PHONE_ALERT{
+  z-index: 3;
+  position: absolute;
+  top: 62%;
+  right: 2%;
+  font-size: 13px;
+  color: red;
+  font-weight: 600;
+
+}
+#CHECK_ALERT{
+  z-index: 3;
+  position: absolute;
+  top: 62%;
+  left: 23%;
+  font-size: 13px;
+  color: red;
+  font-weight: 600;
+
+}
+
+/* CSS styles for Phone */
+
 @media only screen and (max-width: 414px) {
   body{
     height:100vh;
@@ -380,27 +367,130 @@ body {
   .header-box {
     height: auto;
     width: 100%;
-    top: 10px;
-    font-size: 24px;
-
+    top: 20px;
+    font-size: 21px;
+  }
+  #LOGIN_BOX{
+    top: 10%;
+    right: 70%;
+    
   }
   .footer-box {
-    bottom: 10px;
-    width: 100%;
-    height:auto;
+    top: 30%;
+    width: 97%;
+    height:280px;
     border-radius: 5px;
-    padding: 8px 12px;
+    padding: 8px;
   }
   .footer-box h4 {
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 11px;
   }
   
   .footer-box p {
     width: 100%;
     text-align: center;
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 13px;
   }
 
+  #INPUT_EMAIL {
+    width: 95%;
+    margin: 0 0 13px 0;
+  }
+  #INPUT_PHONE {
+    width: 95%;
+    margin: 0 0 13px 0;
+  }
+  
+
+  .check-box{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    margin: 0 0 10px 0;
+    height: auto;
+  }
+  
+  .check-free{
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: #f3f3f3;
+    margin: 0;
+  }
+  .check-sign{
+    width: 19px;
+    height: 19px;
+    display: none;
+  }
+  #SUBMIT_EMAIL {
+    width: 95%;
+    background: #d9e7e7;
+  }
+  @keyframes boxanimate {
+    0%{ top: 30%; opacity: 1;}
+    100%{top: 120%; opacity: 0;}
+  }
+
+  #EMAIL_ALERT{
+  top: 32%;
+  right: 0%;
+  font-size: 11px;
 }
+#PHONE_ALERT{
+  top: 52%;
+  right: 0%;
+  font-size: 11px;
+
+}
+#CHECK_ALERT{
+  top: 65%;
+  left: 0%;
+  font-size: 11px;
+
+}
+  }
+  
+
+/* } */
+
+/* @media only screen and (max-width: 767px) {
+  CSS styles for Tablet
+  @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+  body {
+    font-family: "SCoreDream";
+    height: 100vh;
+  }
+
+
+  .loading-message {
+    font-size: 16px;
+  }
+
+  .point p {
+    font-size: 16px;
+    width: 200px;
+  }
+
+  .point-0 p {
+    left: -90px;
+    font-weight: 500;
+  }
+
+  .point-1 p {
+    left: -90px;
+    font-weight: 500;
+  }
+
+  .footer-box {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+  }
+
+  
+} */

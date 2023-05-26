@@ -12,12 +12,13 @@
       href="https://webfontworld.github.io/SCoreDream/SCoreDream.css"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-dca36be3.js"></script>
+    <script type="module" crossorigin src="/assets/index-3df7745f.js"></script>
   </head>
 
   <body>
     <div id="CONTROL_BOX" class="control-box"></div>
-    <div class="header-box">30억 빚을 300억 가치로 만든 CEO</div>
+    <div class="header-box">30억 빚을 300억 가치로 만든 CEO비밀</div>
+    <div id="LOGIN_BOX">LogIn</div>
     <div id="FOOTER_BOX" class="footer-box">
       <p>메일주소를 입력하시면 '무료'로 체험하실 수 있습니다</p>
       <input
@@ -26,19 +27,21 @@
         placeholder="E-mail 주소 예)mever@mever.me"
       />
       <input
-        id="INPUT_PHONE"
-        type="tel"
-        placeholder="전화 번호 예)010-1234-5678"
+      id="INPUT_PHONE"
+      type="tel"
+      placeholder="전화 번호 예)010-1234-5678"
       />
-      <span class="check-box" id="CHECK_BOX">
-        <span class="check-free">
+      <div class="check-box" id="CHECK_BOX">
+        <div class="check-free">
           <img id="CHECK_SIGN" class="check-sign" src="/assets/checkbox-4df224ef.svg" alt="check">
-        </span>
-        <p>개인정보활용 동의</p>
-      </span>
+        </div>
+        <div>개인정보활용 동의</div>
+      </div>
       <button id="SUBMIT_EMAIL">전송</button>
+      <p id="EMAIL_ALERT" ></p>
+      <p id="PHONE_ALERT" ></p>
+      <p id="CHECK_ALERT" ></p>
       <h4>개인정보 동의는 자동으로 되며, 언제든 해지하실 수 있습니다.</h4>
-      <p id="ALERT_EMAIL"></p>
     </div>
     
     <!-- <div id="progress-bar-container">
@@ -57,15 +60,15 @@
     </div>
     <div class="point point-1 hidden">
       <label class="point-label" name="pay">+</label>
-      <p>성공하는CEO를 위한 상품·서비스</p>
+      <p>SW HW 상품·서비스</p>
     </div>
     <div class="point point-2 hidden">
       <label class="point-label" name="books">+</label>
-      <p>3분뉴스·3분스터디</p>
+      <p>오늘의 3분뉴스</p>
     </div>
     <div class="point point-3 hidden">
       <label class="point-label" name="chair">+</label>
-      <p>1·10·100억매출도전</p>
+      <p>3D홈페이지 레퍼런스</p>
     </div>
     <div class="zoom-out hidden">
       <label class="zoom-out-label">Zoom-Out</label>
@@ -76,11 +79,11 @@
   </body>
   <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
   <script>
-    $.ajax(
+    // $.ajax(
       
-    )
-    axios.post("https://api.mever.me:8080/insMember", data).then((res) => {
-      alert(res);
-    });
+    // )
+    // axios.post("https://api.mever.me:8080/insMember", data).then((res) => {
+    //   alert(res);
+    // });
   </script>
 </html>

@@ -21,7 +21,7 @@ points.forEach((el) => {
       path = "https://mever.me/main/page";
       break;
     case "point-3":
-      path = "https://mever.me/PPT/includes/ART_GALLERY/";
+      path = "https://mever.me/art1/";
       break;
   }
   el.addEventListener("click", () => {
@@ -45,12 +45,13 @@ btn1.addEventListener('click', function() {
 btn2.addEventListener('click', function() {
   localStorage.removeItem('option')
 });
-
 const controlBox = document.querySelector('#CONTROL_BOX')
-const alertEmail = document.querySelector('#ALERT_EMAIL')
 const checkBox = document.querySelector('#CHECK_BOX')
 const checked = document.querySelector('#CHECK_SIGN')
 const footerBox = document.getElementById('FOOTER_BOX')
+const emailAlert = document.getElementById('EMAIL_ALERT')
+const phoneAlert = document.getElementById('PHONE_ALERT')
+const checkAlert = document.getElementById('CHECK_ALERT')
 let isButtonClicked = false;
 // CLICK CHECKBOX
 checkBox.addEventListener('click', ()=>{
@@ -58,24 +59,33 @@ checkBox.addEventListener('click', ()=>{
     checked.style.display = 'none';
   } else {
     checked.style.display = 'block';
+    checkAlert.textContent = ''
   }
   isButtonClicked =! isButtonClicked
   console.log(isButtonClicked);
+ 
 })
+// CLICK THE LOGIN BUTTON
+document.getElementById("LOGIN_BOX").addEventListener("click", function() {
+  window.open("https://www.mever.me/main/login", "_self");
+});
 
 // CLICK THE SUBMIT BUTTON
 submitEmail.addEventListener("click", () => {
   let email = inputEmail.value;
   let phone = inputPhone.value;
   let data = { email, phone };
-console.log(phone);
-    if(inputEmail.value.length > 4 && inputPhone.value.length > 9 && isButtonClicked){
+    if(inputEmail.value.includes('@', '.') 
+    && inputEmail.value.length > 4 
+    && inputPhone.value.length > 7
+    && /[a-zA-Z]/.test(inputPhone.value) === false
+    && isButtonClicked
+    ){
       footerBox.classList.toggle("animation");
       setTimeout(() => {footerBox.style.display = 'none'}, 1998);
       setTimeout(() => {controlBox.style.display = "none"}, 1998);
       localStorage.setItem("mainEmail", email);
       localStorage.setItem("mainPhone", phone);
-
       fetch('https://api.mever.me:8080/insMember', {
         method: 'POST',
         headers: {
@@ -95,12 +105,31 @@ console.log(phone);
       .catch(error => {
         console.error(error);
       });
-
-
   }else{
-      alertEmail.textContent('hi')
+    if(!inputEmail.value.includes('@', '.') && inputEmail.value <= 4){
+      emailAlert.textContent = '입력한 이메일 주소 확인해 주세요!'
+    }
+    if(inputPhone.value.length < 8 && /[a-zA-Z]/.test(inputPhone.value) === false){
+      phoneAlert.textContent = '입력한 전화번호 확인해 주세요!'
+    }
+    if(!isButtonClicked){ checkAlert.textContent = '동이 해 주세요!'}
+  
   }
 });
+// INPUT DISPLAY NONE
+if(localStorage.getItem('mainEmail').length > 1){
+  footerBox.style.display = 'none'
+  controlBox.style.display = "none"
+}
+
+// after focusing alert messages get lost:
+inputEmail.addEventListener('focus', function(){
+  emailAlert.textContent = ''
+})
+inputPhone.addEventListener('focus', function(){
+  phoneAlert.textContent = ''
+})
+// isButtonClicked === true && phoneAlert.textContent = ''
 
 window.onload = function(){
   let w = window.innerWidth;
@@ -108,5 +137,5 @@ window.onload = function(){
 
   document.querySelector('body').style.width = w;
   document.querySelector('body').style.height = h;
-  console.log(width, height);
+  // console.log(width, height);
 }
